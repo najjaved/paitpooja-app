@@ -1,3 +1,4 @@
+from flask import render_template
 from app import app
 
 
@@ -8,4 +9,15 @@ In this example there are two decorators, which associate the URLs / and /index 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
+    user = {'username' : 'Najma'}
+    posts = [
+        {
+            'author': {'username': 'Karsten'},
+            'body': 'Try out my new recipe for potato salad !'
+        },
+        {
+            'author': {'username':'Najma'},
+            'body': 'Adding chili improves every dish !'
+        }
+    ]
+    return render_template('index.html', title='Home', user=user, posts=posts)

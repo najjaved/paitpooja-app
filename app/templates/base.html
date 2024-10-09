@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome to Paitpooja !</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Paitpooja: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    <body>
+</html>
